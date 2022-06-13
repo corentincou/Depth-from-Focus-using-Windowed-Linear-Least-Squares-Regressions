@@ -3,7 +3,7 @@ clear all; close all; clc;
 % =======================================================
 % Input parameters (see README)
 filename = (['D://Depth From Focus//DepthFromFocus//2021.07.01_010//']); 
-ROY = [2215, 1206 ; 4084, 2973]; % RoI studied for depth computation 
+ROI = [2215, 1206 ; 4084, 2973]; % RoI studied for depth computation 
 number_of_images = 64; 
 
 distance = 25; % Distance between two images in a row
@@ -12,14 +12,14 @@ distance = 25; % Distance between two images in a row
 % Show the all in focus image if it exists
 if exist(([filename, 'restack.jpg']), 'file')
     I = imread([filename, 'restack.jpg']);
-    I_gray = rgb2gray(I(ROY(1, 2):ROY(2, 2), ROY(1, 1):ROY(2, 1),:));
+    I_gray = rgb2gray(I(ROI(1, 2):ROI(2, 2), ROI(1, 1):ROI(2, 1),:));
     image_2d(I_gray)
     colormap gray 
 end
 
 
 % Built the images stack for DfF algorithm 
-stock_images = ones(number_of_images,ROY(2, 2)-ROY(1, 2)+1, ROY(2, 1)-ROY(1, 1)+1,1);
+stock_images = ones(number_of_images,ROI(2, 2)-ROI(1, 2)+1, ROI(2, 1)-ROI(1, 1)+1,1);
 parfor i = 1:number_of_images
     if i <10
         I = imread([filename, 'img_00',num2str(i),'.jpg']);
@@ -28,7 +28,7 @@ parfor i = 1:number_of_images
     else
        I = imread([filename, 'img_',num2str(i),'.jpg']);
     end
-    I_gray = rgb2gray(I(ROY(1, 2):ROY(2, 2), ROY(1, 1):ROY(2, 1),:));
+    I_gray = rgb2gray(I(ROI(1, 2):ROI(2, 2), ROI(1, 1):ROI(2, 1),:));
     stock_images(i,:,:,1) = I_gray;
 end
 
@@ -52,7 +52,7 @@ modified_finalImage = modified_finalImage -(sf.p10*X + sf.p01*Y + sf.p20*X.^2 + 
 [a, b] = untilting_params(stock_images, modified_finalImage);
 
 
-% Recalcul plus fin pour avoir résultat untilt
+% Recalcul plus fin pour avoir rÃ©sultat untilt
 % Precise DfF to get the depthmap 
 [finalImage, fiab_imag] = depthFromFocus(stock_images, distance, 13, 6);
 finalImage = finalImage -(a(2)*X + b(2)*Y);
