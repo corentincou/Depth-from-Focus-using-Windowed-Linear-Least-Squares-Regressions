@@ -16,6 +16,7 @@ Parameters:
 - *radius_z* is the size of the window along *z*
 - *mls_filter_size* is the size of the MLS filter applied at the end for post-processing
 
+The folder *example_engraving* can be used as a test in */data*.
 
 ## Second part: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on Depth from Focus
 
@@ -31,6 +32,9 @@ Parameters:
  After it, run it in order to generate a pkl file you can study in the jupyter file. 
  Follow the indications until the end in order to measure the depth of above and under the glaze.
  Don't forget to multiply your depth estimation by the refractive index supposed of your glaze (in our cases, between 1.5 and 2.0).
+ 
+ The folder *example_ceramics_bdx6502* can be used as a test in */data*. You can compare the results you obtain with our results. 
+
 
 Contact informations : 
 - Corentin Cou <corentin.cou@institutoptique.fr> (for 1st and 2nd part)
