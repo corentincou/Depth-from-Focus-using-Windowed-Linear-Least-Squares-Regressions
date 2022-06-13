@@ -2,11 +2,12 @@ clear all; close all; clc;
 
 % =======================================================
 % Input parameters (see README)
-filename = (['D://Depth From Focus//DepthFromFocus//2021.07.01_010//']); 
+filename = (['D://data//example_ceramics_bdx6502//']); 
 ROI = [2215, 1206 ; 4084, 2973]; % RoI studied for depth computation 
-number_of_images = 64; 
+number_of_images = 39;
+type_img = "jpg"; % Choose between 'tiff' and 'jpg'
 
-distance = 25; % Distance between two images in a row
+distance = 30; % Distance between two images in a row
 % =======================================================
 
 % Show the all in focus image if it exists
@@ -20,6 +21,23 @@ end
 
 % Built the images stack for DfF algorithm 
 stock_images = ones(number_of_images,ROI(2, 2)-ROI(1, 2)+1, ROI(2, 1)-ROI(1, 1)+1,1);
+if type_img == "tiff"
+parfor i = 1:number_of_images
+    if i <10
+        t = Tiff([filename, 'aligned_000',num2str(i),'.tif']);
+        I = read(t);
+    elseif i <100
+        t = Tiff([filename, 'aligned_00',num2str(i),'.tif']);
+        I = read(t);
+    else
+        t = Tiff([filename, 'aligned_0',num2str(i),'.tif']);
+        I = read(t);
+    end
+    I(:,:,4) = [];
+    I_gray = rgb2gray(I(crop_x:end - crop_x,crop_y:end - crop_y,:));
+    stock_images(i+1,:,:,1) = I_gray;
+end
+else
 parfor i = 1:number_of_images
     if i <10
         I = imread([filename, 'img_00',num2str(i),'.jpg']);
@@ -30,6 +48,7 @@ parfor i = 1:number_of_images
     end
     I_gray = rgb2gray(I(ROI(1, 2):ROI(2, 2), ROI(1, 1):ROI(2, 1),:));
     stock_images(i,:,:,1) = I_gray;
+end
 end
 
 
@@ -52,7 +71,7 @@ modified_finalImage = modified_finalImage -(sf.p10*X + sf.p01*Y + sf.p20*X.^2 + 
 [a, b] = untilting_params(stock_images, modified_finalImage);
 
 
-% Recalcul plus fin pour avoir rÃ©sultat untilt
+% Recalcul plus fin pour avoir résultat untilt
 % Precise DfF to get the depthmap 
 [finalImage, fiab_imag] = depthFromFocus(stock_images, distance, 13, 6);
 finalImage = finalImage -(a(2)*X + b(2)*Y);
