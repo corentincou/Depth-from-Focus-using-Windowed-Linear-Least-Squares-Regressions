@@ -35,8 +35,8 @@ Parameters:
  
  The folder *example_ceramics_bdx6502* can be used as a test in */data*. You can compare the results you obtain with our results. 
 
-
-Contact informations : 
+Contact informations 
+-------
 - Corentin Cou <corentin.cou@institutoptique.fr> (for 1st and 2nd part)
 - Gael Guennebaud <gael.guennebaud@inria.fr> (only for 2nd part)
 
