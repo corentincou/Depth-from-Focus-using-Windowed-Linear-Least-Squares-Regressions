@@ -1,6 +1,11 @@
 # Depth from Focus using Windowed Linear Least-Squares Regressions
 MATLAB Implementation of Depth from Focus algorithm and Python notebook for ceramics depth estimation.
 
+## Prerequise
+
+- Having MATLAB and download Anaconda in order to use Jupyter notebook
+- Install pickle, pandas and sklearn and mpl_toolkits using "pip install"
+
 ## First part: Windowed linear-least square Regressions
 
 The full algorithm can be runned in the `main.m` Matlab file.
