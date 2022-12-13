@@ -21,7 +21,7 @@ Parameters:
 - *radius_z* is the size of the window along *z*
 - *mls_filter_size* is the size of the MLS filter applied at the end for post-processing
 
-The folder *example_engraving* can be used as a test in */data*.
+The folder *example_engraving* can be used as a test in */data*, as well as the generated stacks presented in the paper (*example_generated_stacks*).
 
 ## Second part: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on Depth from Focus
 
