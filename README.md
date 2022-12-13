@@ -22,6 +22,7 @@ Parameters:
 - *mls_filter_size* is the size of the MLS filter applied at the end for post-processing
 
 The folder *example_engraving* can be used as a test in */data*, as well as the generated stacks presented in the paper (*example_generated_stacks*).
+For the generated stacks, a *reference.pkl* file is added : it is the real depth map used for generations and comparisons.
 
 ## Second part: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on Depth from Focus
 
@@ -43,7 +44,7 @@ Parameters:
 Contact informations 
 -------
 - Corentin Cou <corentin.cou@institutoptique.fr> (for 1st and 2nd part)
-- Gael Guennebaud <gael.guennebaud@inria.fr> (only for 2nd part)
+- Gael Guennebaud <gael.guennebaud@inria.fr> (only for 1st part)
 
 
 License
