@@ -17,6 +17,8 @@ texture = 'yes'; % Do we apply a texture on the mesh?
 texture_name = 'restack.tif';
 % =======================================================
 
+
+
 % Built the images stack for DfF algorithm 
 stock_images = ones(number_of_images,3744-2*crop_x+1,5616-2*crop_y+1,1);
 if type_img == "tiff"

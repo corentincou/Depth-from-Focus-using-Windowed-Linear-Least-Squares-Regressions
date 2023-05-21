@@ -24,6 +24,9 @@ Parameters:
 The folder *example_engraving* can be used as a test in */data*, as well as the generated stacks presented in the paper (*example_generated_stacks*).
 For the generated stacks, a *reference.pkl* file is added : it is the real depth map used for generations and comparisons.
 
+I also add `stl_to_obj.py` python script for the generation of obj file with texture assiociated. 
+In my case, I use the all-in-focus image obtained with Helicon Focus as original image for texturing. 
+
 ## Second part: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on Depth from Focus
 
 For ceramics glazed depth measurement, Depth from focus can be runned in the `main_ceramics.m` Matlab file in order to generate a pkl file that can be studied in the `ceramics_depth_measurement.ipynb` Jupiter notebook file.

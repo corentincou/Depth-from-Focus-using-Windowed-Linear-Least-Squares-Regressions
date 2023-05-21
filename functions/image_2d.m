@@ -5,5 +5,7 @@ imagesc(Image)
 colormap copper
 colorbar
 axis equal;
+
+imwrite(rescale(Image), 'depthmap_matlab.jpg')
 end
 
