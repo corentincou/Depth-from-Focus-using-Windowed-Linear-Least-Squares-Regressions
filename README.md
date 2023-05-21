@@ -27,6 +27,9 @@ For the generated stacks, a *reference.pkl* file is added : it is the real depth
 I also add `stl_to_obj.py` python script for the generation of obj file with texture assiociated. 
 In my case, I use the all-in-focus image obtained with Helicon Focus as original image for texturing. 
 
+More information in our paper: Depth from Focus using Windowed Linear Least Squares Regressions
+https://doi.org/10.1007/s00371-023-02841-x
+
 ## Second part: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on Depth from Focus
 
 For ceramics glazed depth measurement, Depth from focus can be runned in the `main_ceramics.m` Matlab file in order to generate a pkl file that can be studied in the `ceramics_depth_measurement.ipynb` Jupiter notebook file.
@@ -43,6 +46,10 @@ Parameters:
  Don't forget to multiply your depth estimation by the refractive index supposed of your glaze (in our cases, between 1.5 and 2.0).
  
  The folder *example_ceramics_bdx6502* can be used as a test in */data*. You can compare the results you obtain with our results. 
+
+More information in our paper: Non-invasive on-site method for thickness measurement of transparent ceramic glazes based on depth from focus
+ https://doi.org/10.1111/arcm.12813
+
 
 Contact informations 
 -------
