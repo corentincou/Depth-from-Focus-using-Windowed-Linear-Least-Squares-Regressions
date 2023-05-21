@@ -39,8 +39,6 @@ def stl_to_obj(filepath, filename, x_size, y_size, restack_name):
     # Load the stl file
     start = time.time()
     mesh = trimesh.load_mesh(file_obj = filepath+filename, file_type ='stl')
-    end = time.time()
-    print('Executing time : '+str(end-start)+'s')
     print("Import done")
         
     # Load the image for the texture
@@ -67,8 +65,10 @@ def stl_to_obj(filepath, filename, x_size, y_size, restack_name):
     output_file = open(filepath +'object.obj', "w", encoding='utf-8')
     output_file.write(result)
     output_file.close()
+    end = time.time()
     print('Export of the obj file done')
     print('Filepath:', filepath+'object.obj')
+    print('Executing time : '+str(end-start)+'s')
             
     
 #########################################
