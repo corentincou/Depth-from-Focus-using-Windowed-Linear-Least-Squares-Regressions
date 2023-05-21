@@ -68,6 +68,6 @@ else
 end
 
 % Export the depthmap as an stl format
-data_to_stl(modifiedFinalImage, filename + 'object.stl', [size_pixel size_pixel 1])
+data_to_stl(modifiedFinalImage, [filename,'object.stl'], [size_pixel size_pixel 1])
 
 
