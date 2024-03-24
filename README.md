@@ -57,7 +57,7 @@ Parameters:
 
 Contact informations 
 -------
-- Corentin Cou <corentin.cou@institutoptique.fr> (for 1st and 2nd part)
+- Corentin Cou <corentin.cou@inria.fr> (for 1st and 2nd part)
 - Gael Guennebaud <gael.guennebaud@inria.fr> (only for 1st part)
 
 
